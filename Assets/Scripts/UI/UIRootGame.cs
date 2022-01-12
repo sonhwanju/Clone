@@ -19,12 +19,17 @@ public class UIRootGame : MonoBehaviour
     public Button skillBtn1;
     public Button skillBtn2;
 
+    public Button xBtn;
+    private Text xBtnText;
+
     private Image skillBtn1Fill;
     private Image skillBtn2Fill;
 
     float maxCool = 5f;
     float curSkill1 = 5f;
     float curSkill2 = 5f;
+
+    bool isX2Speed = false;
 
     void Awake()
     {
@@ -35,6 +40,7 @@ public class UIRootGame : MonoBehaviour
     {
         skillBtn1Fill = skillBtn1.GetComponent<Image>();
         skillBtn2Fill = skillBtn2.GetComponent<Image>();
+        xBtnText = xBtn.GetComponentInChildren<Text>();
 
         nextWaveBtn.onClick.AddListener(() =>
         {
@@ -60,8 +66,20 @@ public class UIRootGame : MonoBehaviour
                 GameSceneClass.gMGGame.man.Back();
             }
         });
-    }
 
+        xBtn.onClick.AddListener(() =>
+        {
+            Time.timeScale = isX2Speed ? 1f : 2f;
+            xBtnText.text = $"x{(int)Time.timeScale}";
+            isX2Speed = !isX2Speed;
+        });
+    }
+    public void XBtnInit()
+    {
+        Time.timeScale = 1f;
+        xBtnText.text = $"x1";
+        isX2Speed = false;
+    }
     public void SetImageFill(Image fillImg,float value)
     {
         fillImg.fillAmount = value;

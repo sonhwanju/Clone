@@ -98,6 +98,7 @@ public class MGGame : MonoBehaviour
             {
                 //Å¬¸®¾î
                 GameSceneClass.gUiRootGame.ChangeImg(true);
+                GameSceneClass.gUiRootGame.XBtnInit();
                 if (!(WaveCount >= waveInfo.Count - 1))
                 {
                     WaveCount++;

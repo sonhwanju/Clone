@@ -22,6 +22,7 @@ public class CONCastle : CONEntity
             {
                 Hp = MAXHP;
                 GameSceneClass.gMGGame.GameOver();
+                GameSceneClass.gUiRootGame.XBtnInit();
             }
         }
     }
