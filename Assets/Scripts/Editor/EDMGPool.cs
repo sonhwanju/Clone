@@ -25,6 +25,8 @@ public class EDMGPool : Editor
         myMGPool = (MGPool)target;
 
         prevPoolHeroCount = myMGPool.poolHeroMaxCount;
+
+        EditorUtility.SetDirty((MGPool)target);
     }
 
     public override void OnInspectorGUI()
@@ -111,5 +113,7 @@ public class EDMGPool : Editor
             removeCountList.Clear();
             inPrev = inNow;
         }
+
+        EditorUtility.SetDirty((MGPool)target);
     }
 }

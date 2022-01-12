@@ -9,6 +9,16 @@ public class CONCharacter : CONEntity
     // 고유 캐릭터 스탯 데이터
     // 애니메이션 정보
 
+    State curState;
+
+    public override void Start()
+    {
+
+        base.Start();
+
+        curState = new Idle(this.gameObject, null);
+    }
+
     public override void Awake()
     {
         base.Awake();
@@ -16,12 +26,19 @@ public class CONCharacter : CONEntity
 
     public override void OnEnable()
     {
+        curState = new Idle(this.gameObject, null);
         base.OnEnable();
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
+    }
+
+    public override void Update()
+    {
+        curState = this.curState.Process();
+        base.Update();
     }
 
     protected override void cleanUpOnDisable()

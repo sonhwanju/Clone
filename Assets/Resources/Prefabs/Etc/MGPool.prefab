@@ -45,7 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObjList: []
   poolObjCount: 
-  poolHeroObjList: []
-  poolHeroCountList: 
-  poolHeroMaxCount: 0
+  poolHeroObjList:
+  - {fileID: 3126957719968890159, guid: b72ed1f71c4344d99abfe355860f9655, type: 3}
+  - {fileID: 3126957719968890159, guid: e3926d4485b7c4fc0815888cf1a8ec14, type: 3}
+  - {fileID: 4766574691276506315, guid: 1d883c064fd57d04580010c08f1cdc71, type: 3}
+  poolHeroCountList: 000000000000000000000000
+  poolHeroMaxCount: 3
+  poolEnemyObjList: []
+  poolEnemyCountList: 
+  poolEnemyMaxCount: 0
   myTrm: {fileID: 0}
