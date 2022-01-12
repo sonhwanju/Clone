@@ -276,7 +276,7 @@ public class Attack : State
         {
            if(curTime >= attackTime)
             {
-                int hp = enemyTrm.GetComponent<CONEnemy>().Hp -= 10;
+                enemyTrm.GetComponent<CONEnemy>().Hp -= 10;
                 enemyTrm = null;
                 //Debug.Log("attack!");
                 curTime = 0f;
